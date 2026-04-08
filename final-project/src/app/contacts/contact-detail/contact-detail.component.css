@@ -1,0 +1,24 @@
+.panel-heading {
+  background-color: lightgray;
+}
+
+.panel-heading .text-primary {
+  font-weight: bold;
+}
+
+.btn {
+  width: 65px;
+}
+
+.flex-2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.btn-box {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
