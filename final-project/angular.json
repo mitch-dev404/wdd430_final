@@ -12,7 +12,7 @@
     }
   },
   "projects": {
-    "cms": {
+    "fp": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -27,7 +27,7 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "cms",
+      "prefix": "fp",
       "architect": {
         "build": {
           "builder": "@angular/build:application",
@@ -71,10 +71,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "cms:build:production"
+              "buildTarget": "fp:build:production"
             },
             "development": {
-              "buildTarget": "cms:build:development"
+              "buildTarget": "fp:build:development"
             }
           },
           "defaultConfiguration": "development"

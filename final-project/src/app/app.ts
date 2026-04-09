@@ -1,11 +1,11 @@
 import { Component, signal } from '@angular/core';
 
 @Component({
-  selector: 'cms-root',
+  selector: 'fp-root',
   templateUrl: './app.html',
   standalone: false,
   styleUrl: './app.css',
 })
 export class App {
-  protected readonly title = signal('cms');
+  protected readonly title = signal('fp');
 }

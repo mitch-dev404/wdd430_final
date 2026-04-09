@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Contact } from '../contact.model';
+import { Contact } from '../drug.model';
 import { ContactService } from './contact.service';
 
 @Component({
-  selector: 'cms-contacts',
+  selector: 'fp-contacts',
   standalone: false,
   templateUrl: './contacts.component.html',
   styleUrl: './contacts.component.css',

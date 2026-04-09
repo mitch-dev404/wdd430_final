@@ -1,9 +1,9 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
-import { Contact } from '../../../contact.model';
+import { Contact } from '../../../drug.model';
 
 @Component({
-  selector: 'cms-contact-item',
+  selector: 'fp-contact-item',
   standalone: false,
   templateUrl: './contact-item.component.html',
   styleUrl: './contact-item.component.css',

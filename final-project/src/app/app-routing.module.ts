@@ -8,9 +8,9 @@ import {
 import { ContactEditComponent } from './contacts/contact-edit/contact-edit.component';
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: '/contacts', pathMatch: 'full' },
+  { path: '', redirectTo: '/drugs', pathMatch: 'full' },
   {
-    path: 'contacts',
+    path: 'drugs',
     component: ContactsComponent,
     children: [
       { path: 'new', component: ContactEditComponent },

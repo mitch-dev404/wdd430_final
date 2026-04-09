@@ -1,11 +1,11 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 
-import { Contact } from '../../contact.model';
+import { Contact } from '../../drug.model';
 import { ContactService } from '../contact.service';
 
 @Component({
-  selector: 'cms-contact-list',
+  selector: 'fp-contact-list',
   standalone: false,
   templateUrl: './contact-list.component.html',
   styleUrl: './contact-list.component.css',

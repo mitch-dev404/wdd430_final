@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { NgForm } from '@angular/forms';
 
-import { Contact } from '../../contact.model';
+import { Contact } from '../../drug.model';
 import { ContactService } from '../contact.service';
 
 @Component({
-  selector: 'cms-contact-edit',
+  selector: 'fp-contact-edit',
   standalone: false,
   templateUrl: './contact-edit.component.html',
   styleUrl: './contact-edit.component.css',
@@ -37,9 +37,6 @@ export class ContactEditComponent {
       }
       this.editMode = true;
       this.contact = JSON.parse(JSON.stringify(this.originalContact));
-      if (this.contact.group) {
-        this.groupContacts = [...this.contact.group];
-      }
     });
   }
 
@@ -53,7 +50,6 @@ export class ContactEditComponent {
       value.uses,
       value.className,
       value.controlled,
-      value.group,
     );
 
     if (this.editMode === true) {
@@ -62,10 +58,10 @@ export class ContactEditComponent {
       this.contactService.addContact(newContact);
     }
 
-    this.router.navigate(['/contacts']);
+    this.router.navigate(['/drugs']);
   }
 
   onCancel() {
-    this.router.navigate(['/contacts']);
+    this.router.navigate(['/drugs']);
   }
 }

@@ -2,7 +2,7 @@ import { EventEmitter, Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Subject } from 'rxjs';
-import { Contact } from '../contact.model';
+import { Contact } from '../drug.model';
 // import { MOCKCONTACTS } from './MOCKCONTACTS';
 
 @Injectable({
