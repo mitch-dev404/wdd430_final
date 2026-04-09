@@ -4,6 +4,7 @@
   justify-content: space-between;
   align-items: center;
   background-color: lightgray;
+  padding: 10px 20px;
 }
 
 .panel-heading .text-primary {
