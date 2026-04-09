@@ -2,24 +2,24 @@ import { Component } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { NgForm } from '@angular/forms';
 
-import { Contact } from '../../drug.model';
-import { ContactService } from '../contact.service';
+import { Drug } from '../../drug.model';
+import { DrugService } from '../drug.service';
 
 @Component({
-  selector: 'fp-contact-edit',
+  selector: 'fp-drug-edit',
   standalone: false,
-  templateUrl: './contact-edit.component.html',
-  styleUrl: './contact-edit.component.css',
+  templateUrl: './drug-edit.component.html',
+  styleUrl: './drug-edit.component.css',
 })
-export class ContactEditComponent {
-  originalContact!: Contact;
-  contact!: Contact;
-  groupContacts: Contact[] = [];
+export class DrugEditComponent {
+  originalDrug!: Drug;
+  drug!: Drug;
+  groupDrugs: Drug[] = [];
   editMode: boolean = false;
   id!: string;
 
   constructor(
-    private contactService: ContactService,
+    private drugService: DrugService,
     private router: Router,
     private route: ActivatedRoute,
   ) {}
@@ -31,18 +31,18 @@ export class ContactEditComponent {
         this.editMode = false;
         return;
       }
-      this.originalContact = this.contactService.getContact(id);
-      if (!this.originalContact) {
+      this.originalDrug = this.drugService.getDrug(id);
+      if (!this.originalDrug) {
         return;
       }
       this.editMode = true;
-      this.contact = JSON.parse(JSON.stringify(this.originalContact));
+      this.drug = JSON.parse(JSON.stringify(this.originalDrug));
     });
   }
 
   onSubmit(form: NgForm) {
     const value = form.value;
-    const newContact = new Contact(
+    const newDrug = new Drug(
       value.id,
       value.name,
       value.brands,
@@ -53,9 +53,9 @@ export class ContactEditComponent {
     );
 
     if (this.editMode === true) {
-      this.contactService.updateContact(this.originalContact, newContact);
+      this.drugService.updateDrug(this.originalDrug, newDrug);
     } else {
-      this.contactService.addContact(newContact);
+      this.drugService.addDrug(newDrug);
     }
 
     this.router.navigate(['/drugs']);

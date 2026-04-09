@@ -1,21 +1,21 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { ContactsComponent } from './contacts/contacts.component';
+import { DrugsComponent } from './drugs/drugs.component';
 import {
-  ContactDetailComponent,
-} from './contacts/contact-detail/contact-detail.component';
-import { ContactEditComponent } from './contacts/contact-edit/contact-edit.component';
+  DrugDetailComponent,
+} from './drugs/drug-detail/drug-detail.component';
+import { DrugEditComponent } from './drugs/drug-edit/drug-edit.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/drugs', pathMatch: 'full' },
   {
     path: 'drugs',
-    component: ContactsComponent,
+    component: DrugsComponent,
     children: [
-      { path: 'new', component: ContactEditComponent },
-      { path: ':id', component: ContactDetailComponent },
-      { path: ':id/edit', component: ContactEditComponent },
+      { path: 'new', component: DrugEditComponent },
+      { path: ':id', component: DrugDetailComponent },
+      { path: ':id/edit', component: DrugEditComponent },
     ],
   },
 ];

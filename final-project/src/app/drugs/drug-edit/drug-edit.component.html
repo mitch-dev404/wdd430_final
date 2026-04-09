@@ -1,6 +1,6 @@
 <div class="panel panel-default">
   <div class="panel-body">
-    <form id="contact-edit" (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <form id="drug-edit" (ngSubmit)="onSubmit(f)" #f="ngForm">
       <div class="row">
         <div class="col-sm-12 form-group">
           <label for="name">Name:</label>
@@ -11,7 +11,7 @@
             size="120"
             maxlength="120"
             name="name"
-            [ngModel]="contact?.name"
+            [ngModel]="drug?.name"
             required
             #name="ngModel"
           />
@@ -28,7 +28,7 @@
             size="120"
             maxlength="255"
             name="email"
-            [ngModel]="contact?.brands"
+            [ngModel]="drug?.brands"
             #brand="ngModel"
           />
           <div>Enter a list of brand names.</div>
@@ -45,7 +45,7 @@
             size="150"
             maxlength="255"
             name="sideEffects"
-            [ngModel]="contact?.sideEffects"
+            [ngModel]="drug?.sideEffects"
             #sideEffects="ngModel"
           />
           <div>Enter a list of side effects.</div>
@@ -62,7 +62,7 @@
             size="150"
             maxlength="255"
             name="uses"
-            [ngModel]="contact?.uses"
+            [ngModel]="drug?.uses"
             required
             #uses="ngModel"
           />
@@ -80,7 +80,7 @@
             size="150"
             maxlength="255"
             name="className"
-            [ngModel]="contact?.className"
+            [ngModel]="drug?.className"
             #className="ngModel"
           />
           <div>Enter a class name.</div>
@@ -97,7 +97,7 @@
             size="150"
             maxlength="255"
             name="controlled"
-            [ngModel]="contact?.controlled"
+            [ngModel]="drug?.controlled"
             #controlled="ngModel"
           />
           <div>Enter if this is a controlled drug.</div>
