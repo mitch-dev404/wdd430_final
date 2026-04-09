@@ -48,9 +48,11 @@ export class ContactEditComponent {
     const newContact = new Contact(
       value.id,
       value.name,
-      value.email,
-      value.phone,
-      value.imageUrl,
+      value.brands,
+      value.sideEffects,
+      value.uses,
+      value.className,
+      value.controlled,
       value.group,
     );
 

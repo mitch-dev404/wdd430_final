@@ -2,12 +2,6 @@
   <div class="panel-heading">
     <h3 class="text-primary">{{ contact.name }}</h3>
     <div class="flex-2">
-      <img
-        src="{{ contact.imageUrl }}"
-        alt="{{ contact.name }}"
-        class="img-responsive"
-        style="max-height: 50px"
-      />
       <div class="btn-box">
         <a href="#" class="btn btn-primary" [routerLink]="['/contacts', contact.id, 'edit']">Edit</a>
         <a class="btn btn-danger" (click)="onDelete()">Delete</a>
@@ -15,7 +9,7 @@
     </div>
   </div>
   <div class="panel-body">
-    <p class="small"><span class="text-primary">Email:</span> {{ contact.email }}</p>
-    <p class="small"><span class="text-primary">Phone:</span> {{ contact.phone }}</p>
+    <p class="small"><span class="text-primary">Email:</span> {{ contact.brands }}</p>
+    <p class="small"><span class="text-primary">Phone:</span> {{ contact.className }}</p>
   </div>
 </div>

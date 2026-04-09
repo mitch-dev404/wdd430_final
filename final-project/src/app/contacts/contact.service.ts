@@ -16,7 +16,8 @@ export class ContactService {
 
   contacts: Contact[] = [];
 
-  baseUrl = 'https://wdd430-4f6c3-default-rtdb.firebaseio.com/';
+  // baseUrl = 'https://wdd430-4f6c3-default-rtdb.firebaseio.com/';
+  baseUrl = 'https://final-project-e0b34-default-rtdb.firebaseio.com/';
 
   constructor(private http: HttpClient) {
     // this.contacts = MOCKCONTACTS;
@@ -27,7 +28,7 @@ export class ContactService {
     const headers = new HttpHeaders({
           'Content-Type': 'application/json',
         });
-        this.http.get<Contact[]>(this.baseUrl + '/contacts.json', { headers: headers }).subscribe(
+        this.http.get<Contact[]>(this.baseUrl + '/drugs.json', { headers: headers }).subscribe(
           (contacts: Contact[]) => {
             this.contacts = contacts;
             this.maxContactId = this.getMaxId();
@@ -107,7 +108,7 @@ export class ContactService {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
     });
-    this.http.put(this.baseUrl + '/contacts.json', this.contacts, { headers }).subscribe(() => {
+    this.http.put(this.baseUrl + '/drugs.json', this.contacts, { headers }).subscribe(() => {
       this.contactChangedEvent.next(this.contacts.slice());
     });
   }
