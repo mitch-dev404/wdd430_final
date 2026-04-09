@@ -12,11 +12,11 @@ import { ContactService } from '../contact.service';
   styleUrl: './contact-edit.component.css',
 })
 export class ContactEditComponent {
-  originalContact: Contact;
-  contact: Contact;
+  originalContact!: Contact;
+  contact!: Contact;
   groupContacts: Contact[] = [];
   editMode: boolean = false;
-  id: string;
+  id!: string;
 
   constructor(
     private contactService: ContactService,

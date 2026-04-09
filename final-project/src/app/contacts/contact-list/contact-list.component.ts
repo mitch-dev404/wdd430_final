@@ -12,8 +12,8 @@ import { ContactService } from '../contact.service';
 })
 export class ContactListComponent implements OnInit, OnDestroy {
   contacts: Contact[] = [];
-  private contactListChangeSub: Subscription;
-  term: string;
+  private contactListChangeSub!: Subscription;
+  term!: string;
 
   search(value: string) {
     this.term = value;

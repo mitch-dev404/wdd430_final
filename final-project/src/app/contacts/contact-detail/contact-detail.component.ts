@@ -11,7 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrl: './contact-detail.component.css',
 })
 export class ContactDetailComponent implements OnInit {
-  @Input() contact: Contact;
+  @Input() contact!: Contact;
 
   constructor(
     private contactService: ContactService,
