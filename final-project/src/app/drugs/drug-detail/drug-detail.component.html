@@ -1,0 +1,18 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="text-primary">{{ drug.name }}</h3>
+    <div class="flex-2">
+      <div class="btn-box">
+        <a href="#" class="btn btn-primary" [routerLink]="['/drugs', drug.id, 'edit']">Edit</a>
+        <a class="btn btn-danger" (click)="onDelete()">Delete</a>
+      </div>
+    </div>
+  </div>
+  <div class="panel-body">
+    <p class="small"><span class="text-primary">Brands:</span> {{ drug.brands }}</p>
+    <p class="small"><span class="text-primary">Class:</span> {{ drug.className }}</p>
+    <p class="small"><span class="text-primary">Side Effects:</span> {{ drug.sideEffects }}</p>
+    <p class="small"><span class="text-primary">Uses:</span> {{ drug.uses }}</p>
+    <p class="small"><span class="text-primary">Controlled:</span> {{ drug.controlled }}</p>
+  </div>
+</div>

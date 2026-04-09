@@ -1,0 +1,121 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+    <form id="drug-edit" (ngSubmit)="onSubmit(f)" #f="ngForm">
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <label for="name">Name:</label>
+          <input
+            type="text"
+            id="name"
+            class="form-control required"
+            size="120"
+            maxlength="120"
+            name="name"
+            [ngModel]="drug?.name"
+            required
+            #name="ngModel"
+          />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <label for="brand">Brands:</label>
+          <input
+            type="text"
+            id="brand"
+            class="form-control required"
+            size="120"
+            maxlength="255"
+            name="email"
+            [ngModel]="drug?.brands"
+            #brand="ngModel"
+          />
+          <div>Enter a list of brand names.</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <label for="sideEffects">Side Effects:</label>
+          <input
+            type="text"
+            id="sideEffects"
+            class="form-control invalid"
+            size="150"
+            maxlength="255"
+            name="sideEffects"
+            [ngModel]="drug?.sideEffects"
+            #sideEffects="ngModel"
+          />
+          <div>Enter a list of side effects.</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <label for="uses">Uses:</label>
+          <input
+            type="text"
+            id="uses"
+            class="form-control invalid"
+            size="150"
+            maxlength="255"
+            name="uses"
+            [ngModel]="drug?.uses"
+            required
+            #uses="ngModel"
+          />
+          <div>Enter a list of uses.</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <label for="className">Class:</label>
+          <input
+            type="text"
+            id="className"
+            class="form-control invalid"
+            size="150"
+            maxlength="255"
+            name="className"
+            [ngModel]="drug?.className"
+            #className="ngModel"
+          />
+          <div>Enter a class name.</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <label for="controlled">Controlled:</label>
+          <input
+            type="text"
+            id="controlled"
+            class="form-control invalid"
+            size="150"
+            maxlength="255"
+            name="controlled"
+            [ngModel]="drug?.controlled"
+            #controlled="ngModel"
+          />
+          <div>Enter if this is a controlled drug.</div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div
+          class="alert alert-danger"
+          *ngIf="(!name.valid && !name.touched) || (!uses.valid && !uses.touched)"
+        >
+          The Name and Uses fields are required.
+        </div>
+        <div class="col-xs-12 btn-toolbar">
+          <button class="btn btn-success" type="submit" [disabled]="!f.valid">Save</button>
+          <button class="btn btn-primary" type="button" (click)="onCancel()">Cancel</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

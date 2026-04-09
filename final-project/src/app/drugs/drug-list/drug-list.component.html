@@ -1,0 +1,34 @@
+<div class="panel panel-primary">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="row">
+            <span class="title pad-left-right">Drugs</span>
+          </div>
+          <div class="row">
+            <div class="input-group pull-left pad-left-right col-xs-7">
+              <input type="text" #searchBox class="form-control" placeholder="Search"
+              (keyup)="search(searchBox.value)">
+              <div
+                class="glyphicon glyphicon-search input-group-addon"
+                (click)="search(searchBox.value)"
+              ></div>
+            </div>
+            <div class="pull-right pad-left-right">
+              <a class="btn btn-success" [routerLink]="['new']">New Drug</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-xs-12">
+        <fp-drug-item *ngFor="let drug of drugs | drugsFilter: term" [drug]="drug"></fp-drug-item>
+      </div>
+    </div>
+  </div>
+</div>
